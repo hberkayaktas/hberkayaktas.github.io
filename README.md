@@ -1,5 +1,5 @@
 # hberkayaktas
 
-[Live Demo](https://hberkayaktas.github.io) &nbsp; | &nbsp; 
+[Live Demo](https://hberkayaktas.github.io) 
 
 
