@@ -1,5 +1,5 @@
 ---
-title: "About"
+title: "Hakkımda"
 layout: page-sidebar
 permalink: "/about.html"
 image: "/assets/images/screenshot.jpg"
