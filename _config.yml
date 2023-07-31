@@ -22,10 +22,10 @@ authors:
     sal:
       name:           Hami BerKay Aktaş
       site:           https://www.hberkayaktas.github.io
-      avatar:         /assets/images/avatar1.jpg
+      avatar:         assets/images/avatar1.jpg
       bio:            "Hami BerKay Aktaş Blog sayfası kişisel bilgi birikimime dair şeyler paylaşıyorum."
-      email:          wowthemesnet@gmail.com
-      twitter:        https://twitter.com/wowthemesnet
+      email:          hberkayaktas@gmail.com
+      twitter:        https://twitter.com/hberkayaktas
 
     # jane:
     #   name:           Jane
