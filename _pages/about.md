@@ -1,6 +1,5 @@
 ---
 title: "Hakkımda"
-layout: page-sidebar
 permalink: "/about.html"
 comments: true
 ---
