@@ -3,7 +3,7 @@ layout: post
 title:  "PowerShell Nedir? Avantajları Nelerdir"
 author: hberkayaktas
 categories: [ Powershell, tutorial ]
-image: https://cdn.webtekno.com/media/cache/content_detail_v2/article/95496/microsoft-powershell-nedir-1592918072.jpg
+image: assets/images/microsoft-powershell-nedir-1592918072.jpg
 tags: [Microsoft, PowerShell]
 ---
 **Powershell'in Tanımı:**

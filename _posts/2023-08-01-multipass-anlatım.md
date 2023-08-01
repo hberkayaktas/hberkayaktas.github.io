@@ -3,7 +3,7 @@ layout: post
 title:  "Multipass Nedir?"
 author: hberkayaktas
 categories: [ Sanallaştırma, tutorial, Mulltipass ]
-image: https://miro.medium.com/v2/resize:fit:716/0*oUkaLxHNJfXxIBVp.png
+image: assets/images/0*oUkaLxHNJfXxIBVp.png
 ---
 
 Multipass bir sanallaştıma yazılımıdır. Canonical tarafından geliştirillen yazılım  
