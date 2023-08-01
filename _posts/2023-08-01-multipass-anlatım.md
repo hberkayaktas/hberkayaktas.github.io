@@ -3,7 +3,7 @@ layout: post
 title:  "Multipass Nedir?"
 author: hberkayaktas
 categories: [ Sanallaştırma, tutorial, Mulltipass ]
-image: assets/images/0*oUkaLxHNJfXxIBVp.png
+image: assets/images/multipass-cover.png
 ---
 
 Multipass bir sanallaştıma yazılımıdır. Canonical tarafından geliştirillen yazılım  
