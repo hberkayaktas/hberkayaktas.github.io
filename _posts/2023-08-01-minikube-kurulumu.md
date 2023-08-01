@@ -54,7 +54,7 @@ minikube status
 ```
 Örnek Terminal Çıktısı aşağıdaki gibi olacaktır
 
-![minikubestart](images/minikube1.png)
+![minikubestart](_posts/images/minikube1.png)
 
 ## Nodeların durumunu kontrol etme
 
@@ -63,7 +63,7 @@ minikube ayağa kalktığında otomatik olarak context'imiz güncellenmiş ve me
 ```bash 
 kubectl get nodes
 ```
-![minikubegetnodes](images/minikubegetnodes.png)
+![minikubegetnodes](_posts/images/minikubegetnodes.png)
 
 
 ## Minikube Durdurma, Silme, Duraklatma
@@ -73,12 +73,12 @@ kubectl get nodes
 ```bash 
 minikube delete
 ```
-![minikubedelete](images/minikubedelete.png)
+![minikubedelete](_posts/images/minikubedelete.png)
 
 ```bash 
 minikube stop
 ```
-![minikubestop](images/minikubestop.png)
+![minikubestop](_posts/images/minikubestop.png)
 
 
 
@@ -117,7 +117,7 @@ minikube node add
 
 örnek olarak terminal  çıktısı
 
-![minikubenodeadd](images/minikubenodeadd.png)
+![minikubenodeadd](_posts/images/minikubenodeadd.png)
 
 
 ## Eklentiler ile çalışma
