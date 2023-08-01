@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Multipass Nedir?"
-author: Hami Berkay Aktaş
+author: hberkayaktas
 categories: [ Sanallaştırma, tutorial, Mulltipass ]
 image: https://miro.medium.com/v2/resize:fit:716/0*oUkaLxHNJfXxIBVp.png
 ---

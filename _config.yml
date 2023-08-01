@@ -19,7 +19,7 @@ plugins:
   - jekyll-seo-tag
   
 authors:
-    sal:
+    hberkayaktas:
       name:           Hami BerKay Aktaş
       site:           https://www.hberkayaktas.github.io
       avatar:         assets/images/avatar1.jpg
