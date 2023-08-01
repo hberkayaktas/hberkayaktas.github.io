@@ -63,7 +63,7 @@ minikube ayağa kalktığında otomatik olarak context'imiz güncellenmiş ve me
 ```bash 
 kubectl get nodes
 ```
-![minikubegetnodes](_posts/images/minikubegetnodes.png)
+![minikubegetnodes]({{ site.baseurl }}/assets/post_images/minikubegetnodes.png)
 
 
 ## Minikube Durdurma, Silme, Duraklatma
@@ -73,12 +73,12 @@ kubectl get nodes
 ```bash 
 minikube delete
 ```
-![minikubedelete](_posts/images/minikubedelete.png)
+![minikubedelete]({{ site.baseurl }}/assets/post_images/minikubedelete.png)
 
 ```bash 
 minikube stop
 ```
-![minikubestop](_posts/images/minikubestop.png)
+![minikubestop]({{ site.baseurl }}/assets/post_images/minikubestop.png)
 
 
 
@@ -117,7 +117,7 @@ minikube node add
 
 örnek olarak terminal  çıktısı
 
-![minikubenodeadd](_posts/images/minikubenodeadd.png)
+![minikubenodeadd]({{ site.baseurl }}/assets/post_images/minikubenodeadd.png)
 
 
 ## Eklentiler ile çalışma
