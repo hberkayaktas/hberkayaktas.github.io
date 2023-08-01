@@ -54,7 +54,7 @@ minikube status
 ```
 Örnek Terminal Çıktısı aşağıdaki gibi olacaktır
 
-![minikubestart](_posts/images/minikube1.png)
+![minikubestart]({{ site.baseurl }}/assets/post_images/minikube1.png)
 
 ## Nodeların durumunu kontrol etme
 
