@@ -4,7 +4,7 @@ title:  "Minikube Nedir?"
 author: hberkayaktas
 categories: [ tutorial, Kubernetes, minikube ]
 image: assets/images/minikube-logo.jpg
-tags: [featured]
+tags: [featured,  minikube, kubernetes, container, orchestration]
 ---
 ## Minikube nedir?
 
