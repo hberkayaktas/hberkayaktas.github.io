@@ -6,7 +6,7 @@ author: hberkayaktas
 
 Kubeadm ile Kubernetes Kurulumu
 
-# Kubeadm ile Kubernetes'in Ubuntu 22.04'e Kurulumu
+## Kubeadm ile Kubernetes'in Ubuntu 22.04'e Kurulumu
 
 Önkoşullar
 Bu kılavuzda, bir ana düğüm ve iki çalışan düğüm kullanıyoruz. Aşağıda, her düğümdeki sistem gereksinimleri verilmiştir,
