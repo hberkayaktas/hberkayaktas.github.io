@@ -27,7 +27,7 @@ Laboratuvar Kurulumu
 - İlk Worker Node: 192.168.1.174 – k8sworker1.example.net
 - İkinci Worker Node: 192.168.1.175 – k8sworker2.example.net
 
-## 1) Her Düğümde ana bilgisayar adını ayarlayın
+## 1- Her Düğümde ana bilgisayar adını ayarlayın
 
 Ana düğümde oturum açın ve hostnamectl komutunu kullanarak ana bilgisayar adını ayarlayın,
 
@@ -55,7 +55,7 @@ Her düğümde /etc/hosts dosyasına aşağıdaki domainleri tanımlayın.
 192.168.1.175 k8sworker2.example.net k8sworker2
 ```
 
-## 2) Swap'i Kapatma & Kernel Parametrelerini Ekleme
+## 2- Swap'i Kapatma & Kernel Parametrelerini Ekleme
 
 Takas işlemini devre dışı bırakmak için swapoff ve sed komutunun altında yürütün. Tüm düğümlerde aşağıdaki komutları çalıştırdığınızdan emin olun.
 
@@ -91,7 +91,7 @@ Yukarıdaki değişiklikleri yeniden yükleyin, çalıştırın
 $ sudo sysctl --system
 ```
 
-## 3) Containerd Runtime'ı Kurun
+## 3- Containerd Runtime'ı Kurun
 
 Bu kılavuzda, Kubernetes kümemiz için containerd runtime kullanıyoruz. Bu nedenle, containerd'yi kurmak için önce bağımlılıklarını kurun.
 
@@ -127,7 +127,7 @@ $ sudo systemctl restart containerd
 $ sudo systemctl enable containerd
 ```
 
-## 4) Kubernetes'ler için Apt Deposu Ekleyin
+## 4- Kubernetes'ler için Apt Deposu Ekleyin
 
 Kubernetes paketi, varsayılan Ubuntu 22.04 paket havuzlarında mevcut değildir. Bu yüzden kubernet depoları eklememiz, aşağıdaki komutu çalıştırmamız gerekiyor,
 
@@ -138,7 +138,7 @@ $ sudo apt-add-repository "deb http://apt.kubernetes.io/ kubernetes-xenial main"
 
 `Not:` Bu kılavuzu yazarken, Xenial en son Kubernetes deposudur ancak depo Ubuntu 22.04 (Jammy Jellyfish) için kullanılabilir olduğunda, xenial kelimesini 'apt-add-repository' komutunda 'jammy' ile değiştirmeniz gerekir.
 
-## 5) Kubectl, Kubeadm ve Kubelet'i kurun
+## 5- Kubectl, Kubeadm ve Kubelet'i kurun
 
 Depoları ekledikten sonra tüm düğümlere kubectl, kubelet ve Kubeadm yardımcı programı gibi Kubernetes bileşenlerini kurun. Aşağıdaki komut dizisini yürütün,
 
@@ -148,7 +148,7 @@ $ sudo apt install -y kubelet kubeadm kubectl
 $ sudo apt-mark hold kubelet kubeadm kubectl
 ```
 
-## 6) Kubernetes Kümesini Kubeadm ile Başlatın (Master için)
+## 6- Kubernetes Kümesini Kubeadm ile Başlatın (Master için)
 
 Artık hepimiz Kubernetes kümesini başlatmaya hazırız. Aşağıdaki Kubeadm komutunu yalnızca ana düğümde çalıştırın.
 
@@ -181,7 +181,7 @@ $ kubectl get nodes
 
 ![kubeadm-cluster-info]({{ site.baseurl }}/assets/post_images/Initial-k8s-cluster-information-768x123.jpeg)
 
-## 7) Worker Nodeları Clustere Ekleme
+## 7- Worker Nodeları Clustere Ekleme
 
 Her çalışan düğümde, 6. adımda ana düğümü başlattıktan sonra daha önce not aldığınız kubeadm birleştirme komutunu kullanın. Bunun gibi bir şey görünmelidir:
 
@@ -206,7 +206,7 @@ $ kubectl get nodes
 
 Gördüğümüz gibi, düğümlerin durumu ' Hazır Değil ', yani onu aktif hale getirmek için. CNI (Container Network Interface) veya Calico, Flannel ve Weave-net gibi ağ eklentileri kurmalıyız.
 
-## 8) Calico Ağ Eklentisini Kurun
+## 8- Calico Ağ Eklentisini Kurun
 
 Kümedeki bölmeler arasında iletişimi etkinleştirmek için bir ağ eklentisi gerekir. Ana düğümden Calico ağ eklentisini yüklemek için aşağıdaki kubectl komutunu çalıştırın,
 
