@@ -155,7 +155,7 @@ $ sudo kubeadm init --control-plane-endpoint=k8smaster.example.net
 
 Yukarıdaki komutun çıktısı,
 
-![kubeadm-init](images/Kubeadm-initialize-kubernetes-ubuntu-22-04-768x422.jpeg)
+![kubeadm-init]({{ site.baseurl }}/assets/post_images/Kubeadm-initialize-kubernetes-ubuntu-22-04-768x422.jpeg)
 
 Başlatma tamamlandıktan sonra, çalışan düğümlerin kümeye nasıl katılacağına ilişkin talimatları içeren bir mesaj göreceksiniz. İleride başvurmak için kubeadm birleştirme komutunu not edin.(kubeadm join ....)
 
@@ -175,7 +175,7 @@ $ kubectl get nodes
 ```
 Çıktı,
 
-![kubeadm-cluster-info](images/Initial-k8s-cluster-information-768x123.jpeg)
+![kubeadm-cluster-info]({{ site.baseurl }}/assets/post_images/Initial-k8s-cluster-information-768x123.jpeg)
 
 ## 7) Worker Nodeları Clustere Ekleme
 
@@ -188,9 +188,9 @@ $ sudo kubeadm join k8smaster.example.net:6443 --token vt4ua6.wcma2y8pl4menxh2 \
 
 Her iki çalışan düğümden çıktı,
 
-![Woker1-Join](images/Woker1-Join-kubernetes-Cluster-768x262.jpeg)
+![Woker1-Join]({{ site.baseurl }}/assets/post_images/Woker1-Join-kubernetes-Cluster-768x262.jpeg)
 
-![Woker2-Join](images/Woker2-Join-kubernetes-Cluster-768x261.jpeg)
+![Woker2-Join]({{ site.baseurl }}/assets/post_images/Woker2-Join-kubernetes-Cluster-768x261.jpeg)
 
 
 Çalışan düğümlerden alınan yukarıdaki çıktı, her iki düğümün de kümeye katıldığını doğrular. Kubectl komutunu kullanarak ana düğümden düğümlerin durumunu kontrol edin,
@@ -199,7 +199,7 @@ Her iki çalışan düğümden çıktı,
 $ kubectl get nodes
 ```
 
-![Node-Status](images/Node-Status-K8s-Before-CNI-768x137.jpeg)
+![Node-Status]({{ site.baseurl }}/assets/post_images/Node-Status-K8s-Before-CNI-768x137.jpeg)
 
 Gördüğümüz gibi, düğümlerin durumu ' Hazır Değil ', yani onu aktif hale getirmek için. CNI (Container Network Interface) veya Calico, Flannel ve Weave-net gibi ağ eklentileri kurmalıyız.
 
@@ -213,7 +213,7 @@ $ kubectl apply -f https://raw.githubusercontent.com/projectcalico/calico/v3.25.
 
 Yukarıdaki komutların çıktısı aşağıdaki gibi görünecektir,
 
-![Install-Calico](images/Install-Calico-Network-Add-on-k8s-768x477.jpeg)
+![Install-Calico]({{ site.baseurl }}/assets/post_images/Install-Calico-Network-Add-on-k8s-768x477.jpeg)
 
 Kube-system namespacedeki podların durumunu kontrol edelim,
 
@@ -222,7 +222,7 @@ $ kubectl get pods -n kube-system
 ```
 Çıktı
 
-![kubesys](images/Kube-System-Pods-after-calico-installation-768x278.jpeg)
+![kubesys]({{ site.baseurl }}/assets/post_images/Kube-System-Pods-after-calico-installation-768x278.jpeg)
 
 
 Mükemmel, düğümlerin durumunu da kontrol edin.
@@ -231,7 +231,7 @@ Mükemmel, düğümlerin durumunu da kontrol edin.
 $ kubectl get nodes
 ```
 
-![node-status](images/Nodes-Status-after-Calico-Network-Add-on-768x143.jpeg)
+![node-status]({{ site.baseurl }}/assets/post_images/Nodes-Status-after-Calico-Network-Add-on-768x143.jpeg)
 
 
 Harika, yukarıdaki resim düğümlerin aktif düğüm olduğunu onaylıyor. Artık Kubernetes clusterımızın çalıştığını söyleyebiliriz. Başarı ile kubernetes cluster kurulumunu kudeadm ile gerçekleştirmiş olduk.
