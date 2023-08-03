@@ -6,9 +6,9 @@ categories: [ Jekyll, tutorial ]
 image: assets/images/6.jpg
 tags: featured
 ---
-You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated. Something.
+You’ll find this post in your `_posts` directory. Değişikliklerinizi görmek için devam edin ve düzenleyin ve siteyi yeniden oluşturun. Siteyi birçok farklı şekilde yeniden inşa edebilirsiniz, ancak en yaygın yol koşmaktır `jekyll serve`, bir web sunucusunu başlatır ve bir dosya güncellendiğinde sitenizi otomatik olarak yeniden düzenler.Bir şey.
 
-To add new posts, simply add a file in the `_posts` directory that follows the convention `YYYY-MM-DD-name-of-post.ext` and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.
+To add new posts, simply add a file in the `_posts` directory that follows the convention `YYYY-MM-DD-name-of-post.ext` ve gerekli ön maddeyi içerir. Nasıl çalıştığı hakkında bir fikir edinmek için bu yazının kaynağına bir göz atın.
 
 Jekyll also offers powerful support for code snippets:
 
