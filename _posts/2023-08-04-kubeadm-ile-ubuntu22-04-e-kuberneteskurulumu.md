@@ -7,7 +7,7 @@ image: assets/images/kubernetes.png
 tags: [featured, kubernetes, container, orchestration]
 ---
 
-# Kubeadm ile Kubernetes'in Ubuntu 22.04'e Kurulumu
+**Kubeadm ile Kubernetes'in Ubuntu 22.04'e Kurulumu**
 
 Bu yazımda kubeadm ile Ubuntu 22.04 Kurlumunu anlatacağım.bu bir çeviri yazıdır en altta kaynaça da çeviri kaynağı verilmiştir
 
