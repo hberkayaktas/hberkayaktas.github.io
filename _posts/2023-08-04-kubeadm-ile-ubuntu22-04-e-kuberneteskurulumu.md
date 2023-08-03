@@ -8,8 +8,6 @@ tags: [featured, kubernetes, container, orchestration]
 ---
 # Kubeadm ile Kubernetes'in Ubuntu 22.04'e Kurulumu
 
-Bu yazımda kubeadm ile Ubuntu 22.04 Kurlumunu anlatacağım.bu bir çeviri yazıdır en altta kaynaça da çeviri kaynağı verilmiştir
-
 Önkoşullar
 Bu kılavuzda, bir ana düğüm ve iki çalışan düğüm kullanıyoruz. Aşağıda, her düğümdeki sistem gereksinimleri verilmiştir,
 
