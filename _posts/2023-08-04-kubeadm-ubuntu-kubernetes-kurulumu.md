@@ -2,9 +2,9 @@
 layout: post
 title:  "Kubeadm ile Kubernetes'in Ubuntu 22.04'e Kurulumu"
 author: hberkayaktas
-categories: [ tutorial, Kubernetes, minikube ]
+categories: [ tutorial, Kubernetes ]
 image: assets/images/kubernetes.png
-tags: [featured,  minikube, kubernetes, container, orchestration]
+tags: [featured, kubernetes, container, orchestration]
 ---
 
 Kubeadm ile Kubernetes Kurulumu
@@ -32,8 +32,8 @@ Laboratuvar Kurulumu
 Ana düğümde oturum açın ve hostnamectl komutunu kullanarak ana bilgisayar adını ayarlayın,
 
 ```bash
-$ sudo hostnamectl set-hostname "k8smaster.example.net"
-$ exec bash
+sudo hostnamectl set-hostname "k8smaster.example.net"
+exec bash
 ```
 
 Çalışan düğümlerde çalıştırın
@@ -60,8 +60,8 @@ Her düğümde /etc/hosts dosyasına aşağıdaki domainleri tanımlayın.
 Takas işlemini devre dışı bırakmak için swapoff ve sed komutunun altında yürütün. Tüm düğümlerde aşağıdaki komutları çalıştırdığınızdan emin olun.
 
 ```bash
-$ sudo swapoff -a
-$ sudo sed -i '/ swap / s/^\(.*\)$/#\1/g' /etc/fstab
+sudo swapoff -a
+sudo sed -i '/ swap / s/^\(.*\)$/#\1/g' /etc/fstab
 ```
 
 Aşağıdaki çekirdek modüllerini tüm düğümlere yükleyin,
@@ -88,7 +88,7 @@ EOF
 Yukarıdaki değişiklikleri yeniden yükleyin, çalıştırın
 
 ```bash
-$ sudo sysctl --system
+sudo sysctl --system
 ```
 
 ## 3- Containerd Runtime'ı Kurun
@@ -96,35 +96,35 @@ $ sudo sysctl --system
 Bu kılavuzda, Kubernetes kümemiz için containerd runtime kullanıyoruz. Bu nedenle, containerd'yi kurmak için önce bağımlılıklarını kurun.
 
 ```bash
-$ sudo apt install -y curl gnupg2 software-properties-common apt-transport-https ca-certificates
+sudo apt install -y curl gnupg2 software-properties-common apt-transport-https ca-certificates
 ```
 
 Docker deposunu etkinleştir
 
 ```bash
-$ sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmour -o /etc/apt/trusted.gpg.d/docker.gpg
-$ sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmour -o /etc/apt/trusted.gpg.d/docker.gpg
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
 ```
 
 Şimdi, containerd'yi yüklemek için aşağıdaki apt komutunu çalıştırın.
 
 ```bash
-$ sudo apt update
-$ sudo apt install -y containerd.io
+sudo apt update
+sudo apt install -y containerd.io
 ```
 
 Containerd'yi, systemd'yi cgroup olarak kullanmaya başlayacak şekilde yapılandırın.
 
 ```bash
-$ containerd config default | sudo tee /etc/containerd/config.toml >/dev/null 2>&1
-$ sudo sed -i 's/SystemdCgroup \= false/SystemdCgroup \= true/g' /etc/containerd/config.toml
+containerd config default | sudo tee /etc/containerd/config.toml >/dev/null 2>&1
+sudo sed -i 's/SystemdCgroup \= false/SystemdCgroup \= true/g' /etc/containerd/config.toml
 ```
 
 Containerd hizmetini yeniden başlatın ve etkinleştirin
 
 ```bash
-$ sudo systemctl restart containerd
-$ sudo systemctl enable containerd
+sudo systemctl restart containerd
+sudo systemctl enable containerd
 ```
 
 ## 4- Kubernetes'ler için Apt Deposu Ekleyin
@@ -132,8 +132,8 @@ $ sudo systemctl enable containerd
 Kubernetes paketi, varsayılan Ubuntu 22.04 paket havuzlarında mevcut değildir. Bu yüzden kubernet depoları eklememiz, aşağıdaki komutu çalıştırmamız gerekiyor,
 
 ```bash
-$ curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo gpg --dearmour -o /etc/apt/trusted.gpg.d/kubernetes-xenial.gpg
-$ sudo apt-add-repository "deb http://apt.kubernetes.io/ kubernetes-xenial main"
+curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo gpg --dearmour -o /etc/apt/trusted.gpg.d/kubernetes-xenial.gpg
+sudo apt-add-repository "deb http://apt.kubernetes.io/ kubernetes-xenial main"
 ```
 
 `Not:` Bu kılavuzu yazarken, Xenial en son Kubernetes deposudur ancak depo Ubuntu 22.04 (Jammy Jellyfish) için kullanılabilir olduğunda, xenial kelimesini 'apt-add-repository' komutunda 'jammy' ile değiştirmeniz gerekir.
@@ -143,9 +143,9 @@ $ sudo apt-add-repository "deb http://apt.kubernetes.io/ kubernetes-xenial main"
 Depoları ekledikten sonra tüm düğümlere kubectl, kubelet ve Kubeadm yardımcı programı gibi Kubernetes bileşenlerini kurun. Aşağıdaki komut dizisini yürütün,
 
 ```bash
-$ sudo apt update
-$ sudo apt install -y kubelet kubeadm kubectl
-$ sudo apt-mark hold kubelet kubeadm kubectl
+sudo apt update
+sudo apt install -y kubelet kubeadm kubectl
+sudo apt-mark hold kubelet kubeadm kubectl
 ```
 
 ## 6- Kubernetes Kümesini Kubeadm ile Başlatın (Master için)
@@ -153,7 +153,7 @@ $ sudo apt-mark hold kubelet kubeadm kubectl
 Artık hepimiz Kubernetes kümesini başlatmaya hazırız. Aşağıdaki Kubeadm komutunu yalnızca ana düğümde çalıştırın.
 
 ```bash
-$ sudo kubeadm init --control-plane-endpoint=k8smaster.example.net
+sudo kubeadm init --control-plane-endpoint=k8smaster.example.net
 ```
 
 Yukarıdaki komutun çıktısı,
@@ -165,16 +165,16 @@ Başlatma tamamlandıktan sonra, çalışan düğümlerin kümeye nasıl katıla
 Bu nedenle, küme ile etkileşime başlamak için ana düğümde aşağıdaki komutları çalıştırın,
 
 ```bash
-$ mkdir -p $HOME/.kube
-$ sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
-$ sudo chown $(id -u):$(id -g) $HOME/.kube/config
+mkdir -p $HOME/.kube
+sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+sudo chown $(id -u):$(id -g) $HOME/.kube/config
 ```
 
 ardından, küme ve düğüm durumunu görüntülemek için aşağıdaki kubectl komutlarını çalıştırmayı deneyin
 
 ```bash
-$ kubectl cluster-info
-$ kubectl get nodes
+kubectl cluster-info
+kubectl get nodes
 ```
 
 Çıktı,
@@ -199,19 +199,19 @@ Her iki çalışan düğümden çıktı,
 Çalışan düğümlerden alınan yukarıdaki çıktı, her iki düğümün de kümeye katıldığını doğrular. Kubectl komutunu kullanarak ana düğümden düğümlerin durumunu kontrol edin,
 
 ```bash
-$ kubectl get nodes
+kubectl get nodes
 ```
 
 ![Node-Status]({{ site.baseurl }}/assets/post_images/Node-Status-K8s-Before-CNI-768x137.jpeg)
 
-Gördüğümüz gibi, düğümlerin durumu ' Hazır Değil ', yani onu aktif hale getirmek için. CNI (Container Network Interface) veya Calico, Flannel ve Weave-net gibi ağ eklentileri kurmalıyız.
+Gördüğümüz gibi, düğümlerin durumu ' Not Ready ', yani onu aktif hale getirmek için. CNI (Container Network Interface) veya Calico, Flannel ve Weave-net gibi ağ eklentileri kurmalıyız.
 
 ## 8- Calico Ağ Eklentisini Kurun
 
 Kümedeki bölmeler arasında iletişimi etkinleştirmek için bir ağ eklentisi gerekir. Ana düğümden Calico ağ eklentisini yüklemek için aşağıdaki kubectl komutunu çalıştırın,
 
 ```bash
-$ kubectl apply -f https://raw.githubusercontent.com/projectcalico/calico/v3.25.0/manifests/calico.yaml
+kubectl apply -f https://raw.githubusercontent.com/projectcalico/calico/v3.25.0/manifests/calico.yaml
 ```
 
 Yukarıdaki komutların çıktısı aşağıdaki gibi görünecektir,
@@ -221,7 +221,7 @@ Yukarıdaki komutların çıktısı aşağıdaki gibi görünecektir,
 Kube-system namespacedeki podların durumunu kontrol edelim,
 
 ```bash
-$ kubectl get pods -n kube-system
+kubectl get pods -n kube-system
 ```
 
 Çıktı
@@ -231,7 +231,7 @@ $ kubectl get pods -n kube-system
 Mükemmel, düğümlerin durumunu da kontrol edin.
 
 ```bash
-$ kubectl get nodes
+kubectl get nodes
 ```
 
 ![node-status]({{ site.baseurl }}/assets/post_images/Nodes-Status-after-Calico-Network-Add-on-768x143.jpeg)
