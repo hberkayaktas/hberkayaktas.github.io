@@ -28,7 +28,6 @@ Laboratuvar Kurulumu
 
 Ana düğümde oturum açın ve hostnamectl komutunu kullanarak ana bilgisayar adını ayarlayın,
 
-
 ```bash
 $ sudo hostnamectl set-hostname "k8smaster.example.net"
 $ exec bash
@@ -47,7 +46,7 @@ $ exec bash
 
 Her düğümde /etc/hosts dosyasına aşağıdaki domainleri tanımlayın.
 
-```
+```yaml
 192.168.1.173 k8smaster.example.net k8smaster
 192.168.1.174 k8sworker1.example.net k8sworker1
 192.168.1.175 k8sworker2.example.net k8sworker2
@@ -82,6 +81,7 @@ net.bridge.bridge-nf-call-iptables = 1
 net.ipv4.ip_forward = 1
 EOF 
 ```
+
 Yukarıdaki değişiklikleri yeniden yükleyin, çalıştırın
 
 ```bash
@@ -123,7 +123,7 @@ $ sudo systemctl restart containerd
 $ sudo systemctl enable containerd
 ```
 
-## 4) Kubernetes'ler için Apt Deposu Ekleyin.
+## 4) Kubernetes'ler için Apt Deposu Ekleyin
 
 Kubernetes paketi, varsayılan Ubuntu 22.04 paket havuzlarında mevcut değildir. Bu yüzden kubernet depoları eklememiz, aşağıdaki komutu çalıştırmamız gerekiyor,
 
@@ -220,6 +220,7 @@ Kube-system namespacedeki podların durumunu kontrol edelim,
 ```
 $ kubectl get pods -n kube-system
 ```
+
 Çıktı
 
 ![kubesys]({{ site.baseurl }}/assets/post_images/Kube-System-Pods-after-calico-installation-768x278.jpeg)
@@ -232,7 +233,6 @@ $ kubectl get nodes
 ```
 
 ![node-status]({{ site.baseurl }}/assets/post_images/Nodes-Status-after-Calico-Network-Add-on-768x143.jpeg)
-
 
 Harika, yukarıdaki resim düğümlerin aktif düğüm olduğunu onaylıyor. Artık Kubernetes clusterımızın çalıştığını söyleyebiliriz. Başarı ile kubernetes cluster kurulumunu kudeadm ile gerçekleştirmiş olduk.
 
