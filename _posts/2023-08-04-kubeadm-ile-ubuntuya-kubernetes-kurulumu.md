@@ -4,8 +4,10 @@ title:  "Kubeadm ile Kubernetes'in Ubuntu 22.04'e Kurulumu"
 author: hberkayaktas
 categories: [ tutorial ]
 image: assets/images/kubernetes.png
-tags: [featured]
 ---
+
+Kubeadm ile Kubernetes Kurulumu
+
 # Kubeadm ile Kubernetes'in Ubuntu 22.04'e Kurulumu
 
 Önkoşullar
@@ -109,6 +111,7 @@ $ sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ub
 $ sudo apt update
 $ sudo apt install -y containerd.io
 ```
+
 Containerd'yi, systemd'yi cgroup olarak kullanmaya başlayacak şekilde yapılandırın.
 
 ```bash
@@ -137,7 +140,6 @@ $ sudo apt-add-repository "deb http://apt.kubernetes.io/ kubernetes-xenial main"
 ## 5) Kubectl, Kubeadm ve Kubelet'i kurun
 
 Depoları ekledikten sonra tüm düğümlere kubectl, kubelet ve Kubeadm yardımcı programı gibi Kubernetes bileşenlerini kurun. Aşağıdaki komut dizisini yürütün,
-
 
 ```bash
 $ sudo apt update
@@ -173,6 +175,7 @@ ardından, küme ve düğüm durumunu görüntülemek için aşağıdaki kubectl
 $ kubectl cluster-info
 $ kubectl get nodes
 ```
+
 Çıktı,
 
 ![kubeadm-cluster-info]({{ site.baseurl }}/assets/post_images/Initial-k8s-cluster-information-768x123.jpeg)
@@ -192,10 +195,9 @@ Her iki çalışan düğümden çıktı,
 
 ![Woker2-Join]({{ site.baseurl }}/assets/post_images/Woker2-Join-kubernetes-Cluster-768x261.jpeg)
 
-
 Çalışan düğümlerden alınan yukarıdaki çıktı, her iki düğümün de kümeye katıldığını doğrular. Kubectl komutunu kullanarak ana düğümden düğümlerin durumunu kontrol edin,
 
-```
+```bash
 $ kubectl get nodes
 ```
 
@@ -217,7 +219,7 @@ Yukarıdaki komutların çıktısı aşağıdaki gibi görünecektir,
 
 Kube-system namespacedeki podların durumunu kontrol edelim,
 
-```
+```bash
 $ kubectl get pods -n kube-system
 ```
 
@@ -225,10 +227,9 @@ $ kubectl get pods -n kube-system
 
 ![kubesys]({{ site.baseurl }}/assets/post_images/Kube-System-Pods-after-calico-installation-768x278.jpeg)
 
-
 Mükemmel, düğümlerin durumunu da kontrol edin.
 
-```
+```bash
 $ kubectl get nodes
 ```
 
