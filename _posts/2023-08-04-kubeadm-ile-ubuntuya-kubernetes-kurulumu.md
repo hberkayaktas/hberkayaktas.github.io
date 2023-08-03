@@ -3,7 +3,6 @@ layout: post
 title:  "Kubeadm ile Kubernetes'in Ubuntu 22.04'e Kurulumu"
 author: hberkayaktas
 categories: [ tutorial ]
-image: assets/images/kubernetes.png
 ---
 
 Kubeadm ile Kubernetes Kurulumu
