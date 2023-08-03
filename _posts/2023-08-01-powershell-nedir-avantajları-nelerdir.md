@@ -6,7 +6,7 @@ categories: [ Powershell, tutorial ]
 image: assets/images/microsoft-powershell-nedir-1592918072.jpg
 tags: [Microsoft, PowerShell]
 ---
-**Powershell'in Tanımı:
+**Powershell'in Tanımı:**
 
 PowerShell, Microsoft tarafından geliştirilen ve Windows tabanlı işletim sistemlerinde kullanılan komut satırı aracı ve betikleme dilidir. İlk kez 2006 yılında Windows PowerShell 1.0 olarak piyasaya sürülmüş ve o zamandan beri sürekli olarak geliştirilmiştir. PowerShell, Windows'un geleneksel komut satırı aracı olan Command Prompt'tan (cmd.exe) daha gelişmiş özelliklere ve işlevselliğe sahiptir.
 
