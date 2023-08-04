@@ -32,8 +32,8 @@ Laboratuvar Kurulumu
 Ana düğümde oturum açın ve hostnamectl komutunu kullanarak ana bilgisayar adını ayarlayın,
 
 ```bash
-sudo hostnamectl set-hostname "k8smaster.example.net"
-exec bash
+$ sudo hostnamectl set-hostname "k8smaster.example.net"
+$ exec bash
 ```
 
 Çalışan düğümlerde çalıştırın
